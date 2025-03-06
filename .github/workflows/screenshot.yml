@@ -19,12 +19,16 @@ jobs:
   screenshot:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4  # https://github.com/actions/checkout
-      - uses: actions/setup-python@v5  # https://github.com/actions/setup-python
+      - uses: actions/checkout@v4  # caller's repository
+      - uses: actions/checkout@v4
+        with:
+          repository: abeslier/screenshot-workflow
+          path: .screenshot-workflow
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
       - run: pip install selenium
-      - run: python screenshot.py ${{ inputs.input_html_path }} ${{ inputs.output_png_path }}
+      - run: python .screenshot-workflow/screenshot.py ${{ inputs.input_html_path }} ${{ inputs.output_png_path }}
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
