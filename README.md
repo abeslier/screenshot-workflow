@@ -1,6 +1,6 @@
 ## How to use this workflow
 
-Add a file in `.github/workflows/` containing the following lines  in the project repository, changing the paths to `input_html_path` and `output_png_path` :
+Add a file in `.github/workflows/` containing the following lines  in the project repository, changing the paths to `input_html_path`, `output_png_path`, and `md_path.md` :
 
 ```yml
 name: screenshot
@@ -27,9 +27,10 @@ jobs:
     with:
         input_html_path: "path/to/index.html"
         output_png_path: "path/to/screenshot.png"
+        md_path: "path/to/doc.md"
 ```
 
-Add the screenshot to a markdown file (e.g. `README.md`):
+Add the screenshot to the markdown file (e.g. `README.md`):
 
 ```md
 ![screenshot](path/to/screenshot.png)
