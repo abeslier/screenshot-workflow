@@ -16,4 +16,4 @@ def screenshot(url):
 
 
 if __name__ == "__main__":
-    screenshot(f"file:///{os.path.abspath(sys.argv[1]}"))
+    screenshot(f"file:///{os.path.abspath(sys.argv[1])}")
