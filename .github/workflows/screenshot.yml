@@ -1,14 +1,14 @@
 name: screenshot
 
 on:
-  workflow_call:  # https://docs.github.com/en/actions/sharing-automations/reusing-workflows
+  workflow_call:
     inputs:
       input_html_path:
-        default: "example-project/index.html"
+        default: "index.html"
         required: true
         type: string
       output_png_path:
-        default: "example-project/screenshot.png"
+        default: "screenshot.png"
         required: true
         type: string
 

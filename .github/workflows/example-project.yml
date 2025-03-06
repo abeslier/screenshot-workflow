@@ -1,9 +1,9 @@
-name: example
+name: example-project
 
 on:
   push:
     paths:
-      - '**/*.html'  # any html file in all (sub)directories
+      - '**/*.html'  # any html file in any (sub)directories
       - '**/*.css'
       - '**/*.js'
   pull_request:
