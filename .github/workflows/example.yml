@@ -12,6 +12,9 @@ on:
       - '**/*.css'
       - '**/*.js'
 
+permissions:
+    contents: write
+
 jobs:
   screenshot:
     uses: abeslier/screenshot-workflow/.github/workflows/screenshot.yml@main
