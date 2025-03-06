@@ -1,7 +1,7 @@
 name: screenshot
 
 on:
-  workflow_dispatch:
+  workflow_call:  # https://docs.github.com/en/actions/sharing-automations/reusing-workflows
     inputs:
       input_html_path:
         default: "example-project/index.html"
