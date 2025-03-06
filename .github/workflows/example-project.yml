@@ -14,11 +14,12 @@ on:
   workflow_dispatch:
 
 permissions:
-    contents: write
+  contents: write
 
 jobs:
   screenshot:
     uses: abeslier/screenshot-workflow/.github/workflows/screenshot.yml@main
-    with:
-        input_html_path: "example-project/index.html"
-        output_png_path: "example-project/screenshot.png"
+    with:  
+      input_html_path: "example-project/index.html"
+      output_png_path: "example-project/screenshot.png"
+      md_path: "README.md"
