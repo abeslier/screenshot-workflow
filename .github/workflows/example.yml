@@ -1,0 +1,20 @@
+name: example
+
+on:
+  push:
+    paths:
+      - '**/*.html'  # any html file in all (sub)directories
+      - '**/*.css'
+      - '**/*.js'
+  pull_request:
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.js'
+
+jobs:
+  screenshot:
+    uses: abeslier/screenshot-workflow/.github/workflows/screenshot.yml@main
+    with:
+        input_html_path: "example-project/index.html"
+        output_png_path: "example-project/screenshot.png"
