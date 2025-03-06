@@ -28,6 +28,6 @@ jobs:
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ${{ inputs output_screenshot_path }}
+          git add ${{ inputs.output_screenshot_path }}
           git commit -m "update screenshot"
           git push
