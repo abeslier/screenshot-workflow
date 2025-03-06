@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.13'
       - run: pip install selenium
-      - run: python screenshot.py ${{ inputs.input_html_path }}
+      - run: python screenshot.py ${{ inputs.input_html_path }} ${{ inputs.output_png_path }}
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
