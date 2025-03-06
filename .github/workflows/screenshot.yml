@@ -1,0 +1,33 @@
+name: screenshot
+
+on:
+  workflow_dispatch:
+    inputs:
+      input_html_path:
+        default: "index.html"
+        required: true
+        type: string
+      output_screenshot_path:
+        default: "screenshot.png"
+        required: true
+        type: string
+
+permissions:
+    contents: write
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4  # https://github.com/actions/checkout
+      - uses: actions/setup-python@v5  # https://github.com/actions/setup-python
+        with:
+          python-version: '3.13'
+      - run: pip install selenium
+      - run: python screenshot.py ${{ inputs.input_html_path }}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs output_screenshot_path }}
+          git commit -m "update screenshot"
+          git push
