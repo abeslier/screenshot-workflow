@@ -12,11 +12,12 @@ body {
 }
 
 .frame {
-    border: 1px solid lightgray;
+    border: 1px solid lightblue;
     border-radius: 0.625rem;
     padding: 1.25rem;
     box-shadow: 0 0.5rem 1rem lightgray;
     text-align: center;
+    background-color: lightblue;
 }
 
 h1, p {
